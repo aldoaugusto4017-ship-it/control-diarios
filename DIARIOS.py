@@ -17,23 +17,21 @@ portales_completos = [ "EDM",
     "XH-EPL-HTV", "DW-AM", "RT-SPK", 
     "ANSA-REUTER"]
     # EQUIPOS POLITICOS
-    "Partidos políticos",
+    ["Partidos políticos",
     "Sindicatos",
     "Eclesiástico",
     "Coyuntura económica",
     "Fuerzas de seguridad",
     "Simbólico",
     "Poder judicial",
-    
-    # Informes por regiones
+     # Informes por regiones
     "EEUU",
     "Europa",
     "Rusia",
     "Asia occidental",
     "Asia pacifico",
     "África",
-    "Latinoamérica"
-]]
+    "Latinoamérica"]
 # Nombre del archivo donde se guardará el historial en tu compu
 ARCHIVO_HISTORIAL = "historial_lecturas.csv"
 
