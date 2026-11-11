@@ -138,7 +138,7 @@ if os.path.exists(ARCHIVO_HISTORIAL):
     
     st.info(f"📌 **Total de diarios leídos:** {cantidad_leida}")
     if not df_filtrado.empty:
-        st.dataframest.dataframe(df_filtrado)
+        st.dataframe(df_filtrado)
     else:
         st.warning("No hay registros para la fecha y persona seleccionadas.")
 
