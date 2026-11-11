@@ -102,3 +102,77 @@ if st.button("🔄 Cargar / Actualizar Historial"):
         )
     except FileNotFoundError:
         st.warning("Aún no hay registros guardados en el historial. ¡Realiza tu primera carga arriba!")
+        import streamlit as st
+import pandas as pd
+import os
+
+# Nombre del archivo de registros
+ARCHIVO_HISTORIAL = "historial_lecturas.csv"
+
+st.header("📊 Consulta e Historial de Lecturas")
+
+if os.path.exists(ARCHIVO_HISTORIAL):
+    df = pd.read_csv(ARCHIVO_HISTORIAL)
+    
+    # Asegurar formato correcto de fechas
+    df['Fecha'] = pd.to_datetime(df['Fecha'])
+    
+    # ---------------------------------------------------------
+    # 1. BÚSQUEDA POR FECHA Y NOMBRE (CANTIDAD DE DIARIOS)
+    # ---------------------------------------------------------
+    st.subheader("🔍 Buscador de diarios leídos por fecha y persona")
+    
+    col1, col2 = st.columns(2)
+    with col1:
+        fecha_busqueda = st.date_input("Seleccionar fecha:")
+    with col2:
+        nombres_disponibles = ["Todos"] + list(df['Persona'].dropna().unique())
+        nombre_busqueda = st.selectbox("Seleccionar persona:", nombres_disponibles)
+        
+    # Filtrado dinámico
+    df_filtrado = df[df['Fecha'].dt.date == fecha_busqueda]
+    if nombre_busqueda != "Todos":
+        df_filtrado = df_filtrado[df_filtrado['Persona'] == nombre_busqueda]
+        
+    cantidad_leida = len(df_filtrado)
+    
+    st.info(f"📌 **Total de diarios leídos:** {cantidad_leida}")
+    if not df_filtrado.empty:
+        st.dataframe(df_filtrado[['Fecha', 'Hora', 'Dia', 'Portal', 'Persona']])
+    else:
+        st.warning("No hay registros para la fecha y persona seleccionadas.")
+
+    st.markdown("---")
+
+    # ---------------------------------------------------------
+    # 2. TOTALIDAD DE DIARIOS LEÍDOS POR SEMANA (POR NOMBRE)
+    # ---------------------------------------------------------
+    st.subheader("📅 Total semanal por persona")
+    
+    # Se extrae el año y el número de semana
+    df['Semana'] = df['Fecha'].dt.isocalendar().week
+    df['Año'] = df['Fecha'].dt.year
+    
+    # Agrupación por año, semana y persona
+    resumen_semanal = df.groupby(['Año', 'Semana', 'Persona']).size().reset_index(name='Diarios Leídos')
+    
+    st.dataframe(resumen_semanal)
+
+    st.markdown("---")
+
+    # ---------------------------------------------------------
+    # 3. TOTALIDAD DE DIARIOS LEÍDOS POR MES (POR NOMBRE)
+    # ---------------------------------------------------------
+    st.subheader("📆 Total mensual por persona")
+    
+    # Se extrae el año y el mes
+    df['Mes'] = df['Fecha'].dt.strftime('%Y-%m (%B)')
+    
+    # Agrupación por mes y persona
+    resumen_mensual = df.groupby(['Mes', 'Persona']).size().reset_index(name='Diarios Leídos')
+    
+    st.dataframe(resumen_mensual)
+
+else:
+    st.info("Aún no hay registros cargados en el historial.")
+    
