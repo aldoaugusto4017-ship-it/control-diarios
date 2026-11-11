@@ -9,13 +9,14 @@ st.title("📊 Control Diario de Lecturas (Histórico y Automático)")
 st.write("El sistema registra automáticamente la fecha actual, la hora de carga y guarda el historial para consultas pasadas.")
 
 # Lista completa de portales con los diarios principales al inicio (antes de COH)
-portales_completos = [
-    "LN", "P12", "CR-CL", "TIEMPO ARG", "EL VIGIA", "DIARIO OCTUBRE",
-    "COH", "CD", "LJ", "ET", "TS", "PRL", 
-    "XH", "EPL", "HTV", "DW", "AM", "RT", 
-    "SPK", "ANSA", "REUTER", "Portal 22", "Portal 23", "Portal 24"
+portales_completos = [ "EDM",
+    "EDITORIAL MUNDO",
+    "EDITORIAL NACIONAL",
+"LN", "P12", "CR-CL", "TIEMPO ARG", "EL VIGIA", "DIARIO OCTUBRE",
+    "COH", "CD-LJ-ET", "TS-PRL", 
+    "XH-EPL-HTV", "DW-AM", "RT-SPK", 
+    "ANSA-REUTER"
 ]
-
 # Nombre del archivo donde se guardará el historial en tu compu
 ARCHIVO_HISTORIAL = "historial_lecturas.csv"
 
