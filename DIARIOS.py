@@ -15,17 +15,7 @@ portales_completos = [ "EDM",
 "LN", "P12", "CR-CL", "TIEMPO ARG", "EL VIGIA", "DIARIO OCTUBRE",
     "COH", "CD-LJ-ET", "TS-PRL", 
     "XH-EPL-HTV", "DW-AM", "RT-SPK", 
-    "ANSA-REUTER"
-portales_completos = [
-    # Diarios y portales principales
-    "EDM",
-    "EDITORIAL MUNDO",
-    "EDITORIAL NACIONAL",
-    "LN", "P12", "CR-CL", "TIEMPO ARG", "EL VIGIA", "DIARIO OCTUBRE",
-    "COH", "CD-LJ-ET", "TS-PRL", 
-    "XH-EPL-HTV", "DW-AM", "RT-SPK", 
-    "ANSA", "REUTER",
-    
+    "ANSA-REUTER"]
     # EQUIPOS POLITICOS
     "Partidos políticos",
     "Sindicatos",
