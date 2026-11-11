@@ -16,7 +16,34 @@ portales_completos = [ "EDM",
     "COH", "CD-LJ-ET", "TS-PRL", 
     "XH-EPL-HTV", "DW-AM", "RT-SPK", 
     "ANSA-REUTER"
-]
+portales_completos = [
+    # Diarios y portales principales
+    "EDM",
+    "EDITORIAL MUNDO",
+    "EDITORIAL NACIONAL",
+    "LN", "P12", "CR-CL", "TIEMPO ARG", "EL VIGIA", "DIARIO OCTUBRE",
+    "COH", "CD-LJ-ET", "TS-PRL", 
+    "XH-EPL-HTV", "DW-AM", "RT-SPK", 
+    "ANSA", "REUTER",
+    
+    # EQUIPOS POLITICOS
+    "Partidos políticos",
+    "Sindicatos",
+    "Eclesiástico",
+    "Coyuntura económica",
+    "Fuerzas de seguridad",
+    "Simbólico",
+    "Poder judicial",
+    
+    # Informes por regiones
+    "EEUU",
+    "Europa",
+    "Rusia",
+    "Asia occidental",
+    "Asia pacifico",
+    "África",
+    "Latinoamérica"
+]]
 # Nombre del archivo donde se guardará el historial en tu compu
 ARCHIVO_HISTORIAL = "historial_lecturas.csv"
 
