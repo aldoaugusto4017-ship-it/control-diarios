@@ -8,7 +8,7 @@ st.set_page_config(page_title="Control Diario de Lecturas con Historial", layout
 st.title("📊 Control Diario de Lecturas (Histórico y Automático)")
 st.write("El sistema registra automáticamente la fecha actual, la hora de carga y guarda el historial para consultas pasadas.")
 
-ortales_completos = [
+portales_completos = [
     "EDM",
     "EDITORIAL MUNDO",
     "EDITORIAL NACIONAL",
