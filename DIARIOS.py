@@ -8,30 +8,30 @@ st.set_page_config(page_title="Control Diario de Lecturas con Historial", layout
 st.title("📊 Control Diario de Lecturas (Histórico y Automático)")
 st.write("El sistema registra automáticamente la fecha actual, la hora de carga y guarda el historial para consultas pasadas.")
 
-# Lista completa de portales con los diarios principales al inicio (antes de COH)
-portales_completos = [ "EDM",
+ortales_completos = [
+    "EDM",
     "EDITORIAL MUNDO",
     "EDITORIAL NACIONAL",
-"LN", "P12", "CR-CL", "TIEMPO ARG", "EL VIGIA", "DIARIO OCTUBRE",
+    "LN", "P12", "CR-CL", "TIEMPO ARG", "EL VIGIA", "DIARIO OCTUBRE",
     "COH", "CD-LJ-ET", "TS-PRL", 
     "XH-EPL-HTV", "DW-AM", "RT-SPK", 
-    "ANSA-REUTER"]
-    # EQUIPOS POLITICOS
-    ["Partidos políticos",
+    "ANSA", "REUTER",
+    "Equipos políticos",
+    "Partidos políticos",
     "Sindicatos",
     "Eclesiástico",
     "Coyuntura económica",
     "Fuerzas de seguridad",
     "Simbólico",
     "Poder judicial",
-     # Informes por regiones
     "EEUU",
     "Europa",
     "Rusia",
     "Asia occidental",
     "Asia pacifico",
     "África",
-    "Latinoamérica"]
+    "Latinoamérica"
+]
 # Nombre del archivo donde se guardará el historial en tu compu
 ARCHIVO_HISTORIAL = "historial_lecturas.csv"
 
